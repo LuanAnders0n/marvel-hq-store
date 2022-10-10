@@ -29,9 +29,13 @@ export const Container = styled.div`
   .title {
     h1 {
       font-size: 64px;
+      -webkit-text-stroke-color: #000000;
+      -webkit-text-stroke-width: 2px;
     }
     h2 {
       font-size: 32px;
+      -webkit-text-stroke-color: #000000;
+      -webkit-text-stroke-width: 1px;
     }
   }
 

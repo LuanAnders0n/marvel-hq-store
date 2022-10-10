@@ -1,7 +1,12 @@
 import React from 'react'
+import Hqs from '../../components/Hqs'
 
 const Store = () => {
-  return <h1>Teste</h1>
+  return (
+    <div>
+      <Hqs />
+    </div>
+  )
 }
 
 export default Store

@@ -11,8 +11,8 @@ const NavBar = () => {
       <div className="navbar">
         <div className="itens-container">
           <img src={logo} alt="" width={100} />
-          <input className="search" type="search"></input>
-          <Link to="/Shopping">
+          <h1> COMICS</h1>
+          <Link to="/shopping">
             <img className="carrinho" src={carrinho} alt="" />
           </Link>
         </div>

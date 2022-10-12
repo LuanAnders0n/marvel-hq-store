@@ -1,40 +1,46 @@
 import React, { useEffect, useState } from 'react'
-import { useParams } from 'react-router'
+import { Link, useParams } from 'react-router-dom'
 import api from '../../services/api'
+import { Comic } from '../../utils/types'
+import Container from './styled'
 
-// import { Container } from './styles';
-
-interface hq {
-  id: string
-  title: string
-  description: string
-  creators: string
-  thumbnail: {
-    path: string
-    extension: string
-  }
-  prices: string
-}
-
-const Hqdetails = () => {
-  const [comic, setComic] = useState<any>([])
+const HqDetails: React.FC = props => {
   const params = useParams()
+
+  const [comic, setComic] = useState<Comic | null>(null)
 
   useEffect(() => {
     api
       .get(`/comics/${params.id}`)
       .then(response => {
-        setComic(response.data.data.results)
-        console.log(response.data.data.results)
+        setComic(response.data.data.results[0])
+        console.log(response.data.data.results[0])
       })
       .catch(err => console.log(err))
   }, [])
+  return (
+    <Container>
+      <div className="hqs">
+        <div className="comic" key={comic?.id}>
+          <img
+            className="img"
+            src={`${comic?.thumbnail.path}.${comic?.thumbnail.extension}`}
+            alt={`foto do ${comic?.title}`}
+          />
+          <h1 className="title">{comic?.title}</h1>
+          {comic?.creators.items.map(item => {
+            return <h3>{item.name}</h3>
+          })}
 
-  useEffect(() => {
-    console.log(params)
-  }, [])
+          <div className="price">
+            <span>${comic?.prices[0].price}</span>
 
-  return <div />
+            <button className="buy">Buy</button>
+          </div>
+        </div>
+      </div>
+    </Container>
+  )
 }
 
-export default Hqdetails
+export default HqDetails

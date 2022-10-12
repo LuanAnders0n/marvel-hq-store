@@ -18,7 +18,7 @@ const Home = () => {
             EXPLORE AO MAXIMO O MULTIVERSO!
           </h2>
         </div>
-        <Link to="/Store" className="link">
+        <Link to="store" className="link">
           <h3>CONHEÇA NOSSAS HISTORIAS!</h3>
         </Link>
       </div>

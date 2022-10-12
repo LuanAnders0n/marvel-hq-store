@@ -9,7 +9,7 @@ const RoutesComponent = () => {
     <Routes>
       <Route path="/" element={<Home />} />
       <Route path="store" element={<Store />} />
-      <Route path="shopping" element={<Shopping />} />
+      <Route path="comic/:id" element={<Shopping />} />
     </Routes>
   )
 }

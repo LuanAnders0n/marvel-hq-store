@@ -3,6 +3,9 @@ import styled from 'styled-components'
 export const Container = styled.div`
   background: #ffffff;
   padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
   .hqs {
     display: grid;
@@ -22,7 +25,7 @@ export const Container = styled.div`
       animation-iteration-count: infinite;
       animation-timing-function: ease-in-out;
 
-      border: #000000 solid 3px;
+      border: #000000 double 5px;
       border-radius: 5px;
 
       @keyframes floating {
@@ -71,6 +74,10 @@ export const Container = styled.div`
       transition-delay: 0.15s;
     }
   }
-`
 
+  .link {
+    width: 550px;
+    height: 550px;
+  }
+`
 export default Container

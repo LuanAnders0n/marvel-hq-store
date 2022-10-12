@@ -1,24 +1,16 @@
 import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import api from '../../services/api'
+import { Comic } from '../../utils/types'
 
-import Container from './styles'
-
-interface ResponseData {
-  id: string
-  title: string
-  thumbnail: {
-    path: string
-    extension: string
-  }
-}
+import Container from './styled'
 
 const Hqs: React.FC = () => {
-  const [comics, setComics] = useState<ResponseData[]>([])
+  const [comics, setComics] = useState<Comic[]>([])
 
   useEffect(() => {
     api
-      .get(`/comics?&startYear=2018&limit=30`)
+      .get(`/comics?&startYear=2018&limit=48`)
       .then(response => {
         setComics(response.data.data.results)
         console.log(response.data.data.results)
@@ -30,8 +22,8 @@ const Hqs: React.FC = () => {
       <div className="hqs">
         {comics.map(comics => {
           return (
-            <Link to={`comic/${comics.id}`}>
-              <div className="comic" key={comics.id}>
+            <Link className="link" to={`/comic/${comics.id}`}>
+              <li className="comic" key={comics.id}>
                 <img
                   className="img"
                   src={`${comics.thumbnail.path}.${comics.thumbnail.extension}`}
@@ -40,8 +32,8 @@ const Hqs: React.FC = () => {
                 <div className="title">
                   <span className="name">{comics.title}</span>
                 </div>
-                <button className="buy">Comprar</button>
-              </div>
+                <button className="buy">Buy</button>
+              </li>
             </Link>
           )
         })}

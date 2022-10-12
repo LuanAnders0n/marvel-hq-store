@@ -4,7 +4,19 @@ import api from '../../services/api'
 
 // import { Container } from './styles';
 
-const HqDetails = () => {
+interface hq {
+  id: string
+  title: string
+  description: string
+  creators: string
+  thumbnail: {
+    path: string
+    extension: string
+  }
+  prices: string
+}
+
+const Hqdetails = () => {
   const [comic, setComic] = useState<any>([])
   const params = useParams()
 
@@ -18,7 +30,11 @@ const HqDetails = () => {
       .catch(err => console.log(err))
   }, [])
 
+  useEffect(() => {
+    console.log(params)
+  }, [])
+
   return <div />
 }
 
-export default HqDetails
+export default Hqdetails

@@ -7,8 +7,6 @@ import Container from './styles'
 interface ResponseData {
   id: string
   title: string
-  description: string
-  creators: string
   thumbnail: {
     path: string
     extension: string
@@ -33,13 +31,16 @@ const Hqs: React.FC = () => {
         {comics.map(comics => {
           return (
             <Link to={`comic/${comics.id}`}>
-              <div key={comics.id}>
+              <div className="comic" key={comics.id}>
                 <img
                   className="img"
                   src={`${comics.thumbnail.path}.${comics.thumbnail.extension}`}
                   alt={`foto do ${comics.title}`}
                 />
-                <span className="name">{comics.title}</span>
+                <div className="title">
+                  <span className="name">{comics.title}</span>
+                </div>
+                <button className="buy">Comprar</button>
               </div>
             </Link>
           )

@@ -9,7 +9,7 @@ export const GlobalStyle = createGlobalStyle`
   }
 
   body {
-    background: #202020;
+    background: #ffffff;
     -webkit-font-smoothing: antialiased;
     color: #ffffff;
   }
@@ -17,6 +17,10 @@ export const GlobalStyle = createGlobalStyle`
   body, input, button {
     font: 400 16px 'Roboto', sans-serif;
   }
+
+input{
+  border: 0;
+}
 
   h1 {
     font-size: 2rem;
@@ -29,5 +33,7 @@ export const GlobalStyle = createGlobalStyle`
   button {
     cursor: pointer;
   }
+
+
 
 `

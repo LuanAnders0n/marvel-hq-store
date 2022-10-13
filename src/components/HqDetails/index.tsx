@@ -27,15 +27,17 @@ const HqDetails: React.FC = props => {
             src={`${comic?.thumbnail.path}.${comic?.thumbnail.extension}`}
             alt={`foto do ${comic?.title}`}
           />
-          <h1 className="title">{comic?.title}</h1>
-          {comic?.creators.items.map(item => {
-            return <h3>{item.name}</h3>
-          })}
+          <div className="text">
+            <h1 className="title">{comic?.title}</h1>
+            {comic?.creators.items.map(item => {
+              return <h3>{item.name}</h3>
+            })}
 
-          <div className="price">
-            <span>${comic?.prices[0].price}</span>
+            <div className="price">
+              <span>${comic?.prices[0].price}</span>
 
-            <button className="buy">Buy</button>
+              <button className="buy">Buy</button>
+            </div>
           </div>
         </div>
       </div>

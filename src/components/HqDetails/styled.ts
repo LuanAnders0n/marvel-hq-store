@@ -1,13 +1,13 @@
 import styled from 'styled-components'
 
 export const Container = styled.div`
+  background: #efe9e9;
   display: flex;
+  align-items: center;
+  justify-content: center;
 
   .img {
-    padding: 50px;
-    width: 450px;
-    height: 700px;
-    float: left;
+    margin-top: 15px;
   }
 
   .buy {
@@ -17,7 +17,6 @@ export const Container = styled.div`
     height: 75px;
     border: none;
     border-radius: 30px 10px 30px 10px;
-    margin-top: 10px;
     font-size: 30px;
     font-weight: bold;
 
@@ -48,6 +47,9 @@ export const Container = styled.div`
 
   .text {
     color: #000000;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
   }
 `
 export default Container

@@ -29,6 +29,7 @@ const HqDetails: React.FC = props => {
           />
           <div className="text">
             <h1 className="title">{comic?.title}</h1>
+            <h3>Creators:</h3>
             {comic?.creators.items.map(item => {
               return <h3>{item.name}</h3>
             })}

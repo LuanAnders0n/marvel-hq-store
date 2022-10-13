@@ -3,7 +3,7 @@ import styled from 'styled-components'
 export const Container = styled.main`
   .navbar {
     background: #ed1d24;
-    width: 100%;
+    width: 100vw;
   }
 
   .itens-container {

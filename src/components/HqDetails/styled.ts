@@ -7,6 +7,7 @@ export const Container = styled.div`
     padding: 50px;
     width: 450px;
     height: 700px;
+    float: left;
   }
 
   .buy {
@@ -29,7 +30,7 @@ export const Container = styled.div`
   .price {
     width: 500px;
     height: 100px;
-    background-color: #413939;
+    background-color: #d7cfcf;
     border-radius: 10px;
     display: flex;
     justify-content: space-around;
@@ -43,6 +44,10 @@ export const Container = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;
+  }
+
+  .text {
+    color: #000000;
   }
 `
 export default Container
